@@ -1,0 +1,196 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Apply styles to the entire document */
+body {
+    font-family: 'Manrope', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Header styles */
+.header {
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.menu-toggle label {
+    cursor: pointer;
+}
+
+.menu {
+    list-style: none;
+    display: flex; /* Display menu items as a flexbox */
+}
+
+.menu li {
+    margin-right: 20px;
+}
+
+.menu li:last-child {
+    margin-right: 0;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #1f2937;
+    font-weight: 600;
+}
+
+/* Logo styles */
+.logo {
+    text-align: center;
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+.logo h1 {
+    font-weight: 700;
+    font-size: 30px;
+}
+
+.logo span {
+    color: #0d0d0d;
+}
+
+/* Content styles */
+.content {
+    width: 100%;
+    max-width: 40rem;
+    margin: 0 auto;
+    padding: 24px;
+    font-weight: 500;
+}
+
+.info-box {
+    background-color: #d1d5db;
+    padding: 8px 16px;
+    border-radius: 16px;
+    margin-bottom: 16px;
+    color: #212121;
+}
+
+.example-prompt {
+    color: #570df8;
+    border: 1px solid #570df8;
+    background: transparent;
+    padding: 8px 16px;
+    border-radius: 8px;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 16px;
+}
+
+.input-box {
+    display: flex;
+    margin-top: 24px;
+}
+
+input[type="text"] {
+    width: 100%;
+    flex-grow: 1;
+    padding: 16px;
+    border: 1px solid rgba(31, 41, 55, 0.2);
+    border-radius: 8px;
+    font-size: 16px;
+    color: #1f2937;
+}
+
+.search-button {
+    border: 1px solid transparent;
+    background: transparent;
+    cursor: pointer;
+}
+
+.search-button svg {
+    width: 24px;
+}
+
+/* CSS for larger screens (desktop) */
+@media (min-width: 769px) {
+    .menu-toggle {
+        display: none; /* Hide the menu toggle button on larger screens */
+    }
+    .menu {
+        display: flex;
+        justify-content: space-around;
+    }
+}
+
+/* CSS for smaller screens (mobile) */
+@media (max-width: 768px) {
+    .menu {
+        display: none; /* Hide the menu on smaller screens by default */
+        flex-direction: column;
+        background-color: #fff;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        z-index: 1;
+        padding: 12px;
+        border-radius: 8px;
+    }
+    .menu-toggle {
+        display: block; /* Display the menu toggle button on smaller screens */
+        cursor: pointer;
+    }
+    .menu-toggle label {
+        font-size: 24px; /* Increase the font size to make it look like a hamburger icon */
+    }
+    .menu-toggle input[type="checkbox"] {
+        display: none;
+    }
+    .menu-toggle input[type="checkbox"]:checked ~ .menu {
+        display: flex;
+    }
+    .menu li {
+        display: block;
+        margin-bottom: 12px;
+    }
+    .menu a {
+        text-decoration: none;
+        color: #1f2937;
+        font-weight: 600;
+    }
+}
+
+/* Add styles for the chat messages */
+.chat-container {
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+.message {
+    background-color: #d1d5db;
+    padding: 8px 16px;
+    border-radius: 16px;
+    margin-bottom: 16px;
+    color: #212121;
+}
+
+.user {
+    align-self: flex-start;
+    background-color: blanchedalmond; 
+}
+
+.bot {
+    align-self: flex-end;
+}
+
+/* Style for larger screens (desktop) */
+@media (min-width: 769px) {
+    .chat-container {
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

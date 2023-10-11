@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>carla</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="header">
+        <div class="menu-toggle">
+            <label for="menu-toggle">&#9776;</label>
+        </div>
+        <ul class="menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Privacy</a></li>
+            <li><a href="#">Team</a></li>
+            <li><a href="#">Purpose</a></li>
+        </ul>
+    </div>
+    <div class="logo">
+        <h1>project<span>carla</span></h1>
+        <div>campus assistant for resources, learning, and accessibility</div>
+    </div>
+    
+    <div class="content">
+        <div class="info-box">
+            hello, i'm <a href="">carla</a>, your ai campus assistant for resources you need to succeed mentally, physically, and academically.
+        </div>
+        <div class="info-box">
+            feel free to enter as much or as little information as you feel comfortable sharing and i will do my best to find resources that fit your needs.
+            and don't worry, i promise i won't share your information with anyone else. 
+            don't believe me? check out my <a href="https://giphy.com/gifs/ransomware-cybersecurityart-revil-pOD7hmsWM27Z1cith2">privacy policy</a>.
+        </div>
+
+        <div class="chat-container" id="chat">
+            <!-- Chat messages will be inserted here -->
+        </div>
+
+
+        <button class="example-prompt"><a href="https://www.health.state.mn.us/communities/suicide/mnresponse/988.html#:~:text=If%20you%20need%20suicide%20or,with%20a%20trained%20crisis%20specialist." target="_blank"> 24/7 helpline</a></button>
+        <div class="input-box">
+            <input type="text" placeholder="how are you feeling today?" autocomplete="off">
+            <button class="search-button">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+        // Get references to the menu toggle elements
+        const menuToggleLabel = document.querySelector(".menu-toggle label");
+        const menu = document.querySelector(".menu");
+
+        // Get references to the input box elements
+        const inputBox = document.querySelector(".input-box input");
+
+        const chatBox = document.getElementById("chat");
+
+        // Add an event listener for the search button
+        document.querySelector(".search-button").addEventListener("click", function() {
+            const userInput = inputBox.value.trim();
+
+            // Display user's message in the chat box
+            displayMessage("user", userInput);
+            
+            // Check the user's input and provide a specific response
+            if (userInput === "help") {
+                
+                // Display a help message
+                displayMessage("bot", "I'm here to help you with mental health resources!");
+                
+            } 
+
+            else if (userInput === "hi" || userInput === "hello") {
+                // Provide information about the chatbot
+                displayMessage("bot", "I am Carla, your mental health chatbot.");
+                } 
+
+            else if (userInput === "bye") {
+                // Provide information about the chatbot
+                displayMessage("bot", "Bye! I hope you feel better soon.");
+                } 
+
+            else if (userInput === "i'm feeling sad") {
+                // Provide information about the chatbot
+                displayMessage("bot", "I'm sorry to hear that. Here are some resources that might help.");
+                } 
+
+            else if (userInput === "i'm feeling anxious") {
+                // Provide information about the chatbot
+                displayMessage("bot", "I'm sorry to hear that. Here are some resources that might help.");
+                } 
+
+            else if (userInput === "i'm feeling depressed") {
+                // Provide information about the chatbot
+                displayMessage("bot", "I'm sorry to hear that. Here are some resources that might help.");
+                } 
+
+            else if (userInput === "i'm feeling stressed") {
+                // Provide information about the chatbot
+                displayMessage("bot", "I'm sorry to hear that. Here are some resources that might help.");
+                } 
+
+            else if (userInput === "i'm feeling lonely") {
+                // Provide information about the chatbot
+                displayMessage("bot", "I'm sorry to hear that. Here are some resources that might help.");
+                } 
+
+            else if (userInput === "i'm feeling suicidal") {
+                // Provide information about the chatbot
+                displayMessage("bot", "I'm sorry to hear that. Here are some resources that might help.");
+                } 
+
+            else if (userInput === "i'm feeling overwhelmed") {
+                // Provide information about the chatbot
+                displayMessage("bot", "I'm sorry to hear that. Here are some resources that might help.");
+                } 
+
+            else if (userInput === "i'm feeling angry") {
+                // Provide information about the chatbot
+                displayMessage("bot", "I'm sorry to hear that. Here are some resources that might help.");
+                } 
+
+            else if (userInput === "i'm feeling tired") {
+                // Provide information about the chatbot
+                displayMessage("bot", "I'm sorry to hear that. Here are some resources that might help.");
+            } 
+
+            else if (userInput === "this semester has been really hard") {
+                // Provide information about the chatbot
+                displayMessage("bot", "College life can be stressful. CSP students have access to confidential and licensed professional counseling. Students can walk-in during open hours or schedule an appointment (preferred) to be seen by a licensed counselor in a professional and confidential manner. Counseling is available from 9:30am – 3:30pm Monday-Friday during the academic year. To schedule appointments please send an email to counseling@csp.edu");
+            }
+
+            else if (userInput === "i have not been feeling great this past month can you connect me to the therapist on campus") {
+                displayMessage("bot", "I can help you with that! Here is a link to the therapist on campus: https://www.csp.edu/student-services/student-health-and-wellness/");
+            }
+
+
+            else {
+                // Handle other user inputs here
+                displayMessage("bot", "I'm sorry, I don't understand. Please try another phrase.");
+                }
+
+            // Clear the input box
+            inputBox.value = "";
+            });
+
+        // Add a keypress event listener to handle Enter key
+        inputBox.addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+                // Trigger the click event on the search button
+                document.querySelector(".search-button").click();
+            }
+        });
+
+        function displayMessage(sender, message) {
+            const messageElement = document.createElement("div");
+            messageElement.classList.add("message", sender);
+            messageElement.innerText = message;
+            chatBox.appendChild(messageElement);
+        }
+
+
+        // Add a click event listener to the menu toggle label
+        menuToggleLabel.addEventListener("click", function() {
+            // Toggle the visibility of the menu when the label is clicked
+            if (menu.style.display === "block" || menu.style.display === "") {
+            menu.style.display = "none";
+            } else {
+            menu.style.display = "block";
+            }
+        });
+        });
+    </script>
+</body>
+</html>
