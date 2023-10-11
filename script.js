@@ -59,6 +59,22 @@ document.addEventListener("DOMContentLoaded", function() {
             displayMessage("bot", "I'm sorry to hear that. Here are some resources that might help.");
             } 
 
+        else if (userInput === "How can I manage my stress during exams?") {
+            displayMessage("bot", "Managing exam stress is important. You can try techniques like deep breathing, time management, and seeking help from academic advisors. Additionally, the college provides workshops on stress management. Visit the student services office for more information.");
+        }
+        
+        else if (userInput === "I'm struggling to stay motivated in my studies") {
+            displayMessage("bot", "It's common to face motivation issues. You can set specific goals, create a study schedule, or join study groups to stay motivated. Additionally, the college offers tutoring services and academic advisors who can help you with study strategies.");
+        }
+        
+        else if (userInput === "I'm having trouble balancing work, classes, and personal life") {
+            displayMessage("bot", "Balancing responsibilities can be challenging. Consider discussing your schedule with an academic advisor to ensure it's manageable. You can also explore time management apps and techniques to help organize your time effectively.");
+        }
+        
+        else if (userInput === "How can I improve my mental well-being on campus?") {
+            displayMessage("bot", "Improving your mental well-being is crucial. You can participate in campus wellness programs, join clubs, and engage in physical activities. Additionally, don't hesitate to reach out to the college's counseling services for support and resources.");
+        }
+
         else if (userInput === "i'm feeling suicidal") {
             // Provide information about the chatbot
             displayMessage("bot", "I'm sorry to hear that. Here are some resources that might help.");
